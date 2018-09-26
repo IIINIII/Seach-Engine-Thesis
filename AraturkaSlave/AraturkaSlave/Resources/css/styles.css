@@ -1,0 +1,176 @@
+*{
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    margin:0;
+    background: url(../img/bg.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    font-family: arial,sans-serif;
+    padding-bottom: 32px;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    background: #f1f1f1;
+    border-bottom: 1px solid #3292ff;
+    box-shadow: 0 0 24px rgba(0,0,0,0.32);
+    padding: 16px 128px;
+}
+
+.header span {
+    display: inline-block;
+}
+
+.ronly {
+    margin-right: 16px;
+    height: 32px;
+}
+
+.searchBar {
+    vertical-align: text-bottom;
+    line-height: 32px;
+    padding: 0 8px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.32);
+}
+
+.btn {
+    vertical-align: text-bottom;
+    background: #fafafa;
+    border: 1px solid #afafaf;
+    box-shadow: 0 0 8px rgba(0,0,0,0.32);
+    line-height: 32px;
+    min-width: 52px;
+    padding: 0 8px;
+    margin: 0 8px;
+    border-radius: 4px;
+    transition: .2s;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    color: #484848;
+}
+
+.btn.selected {
+    pointer-events: none;
+    background: #484848;
+    color: #f1f1f1;
+}
+
+.btn:hover {
+    background: #fff;
+}
+
+.btn:active {
+    background: #eee;
+    box-shadow: 0 0 4px rgba(0,0,0,0.32);
+}
+
+.content {
+    padding: 0 24px;
+    margin-left: 172px;
+    max-width: 960px;
+    background: #fff;
+    border: 1px solid #3292ff;
+    box-shadow: 0 0 24px rgba(0,0,0,0.32);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+.resultNote {
+    color: #808080;
+    margin-left: 180px;
+}
+
+.normalResult {
+    margin-top: 32px;
+    border-top: 1px solid #609;
+}
+
+.normalResult:first-of-type {
+    margin-top: 0;
+    border-top: 1px solid transparent;
+}
+
+.normalResult h1 {
+    margin-bottom: 0;
+    color: #3292ff;
+    font-size: 24px;
+}
+
+.normalResult .url {
+    color: #006621;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    width: 100%;
+    display:block;
+}
+
+.normalResult p {
+    margin-top: 8px;
+    color: ##545454;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.pager {
+    max-width: 960px;
+    margin-left: 172px;
+    text-align: center;
+}
+
+.gorselContent {
+    text-align: justify;
+}
+
+.gorselResult {
+    background-image: url(../img/imgbg.png);
+    background-size: 200px;
+    display: inline-block;
+    vertical-align: central;
+    border: 1px solid #606060;
+    margin: 8px;
+}
+
+.gorselResult img {
+    max-height:160px;
+}
+
+.pageCenter {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.pageCenter .btn {
+    font-size:24px;
+    padding: 8px 16px;
+    min-width: 200px;
+}
+
+.searchBox {
+    color: white;
+    border: 1px solid darkgray;
+    background: rgba(0,0,0,0.86);
+    font-size: 24px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 720px;
+    box-shadow: inset 0 0 16px black;
+}

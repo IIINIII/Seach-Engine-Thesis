@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="searcher_db" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.10.10.4;Initial Catalog=searcher_db;Persist Security Info=True;User ID=SA" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="searcher_dbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AnahtarIfadeler" Member="AnahtarIfadelers">
+    <Type Name="AnahtarIfadeler">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ifade" Type="System.String" DbType="NVarChar(2048) NOT NULL" CanBeNull="false" />
+      <Association Name="AnahtarIfadeler_SayfaAnahtarlari" Member="SayfaAnahtarlaris" ThisKey="Id" OtherKey="ifade_id" Type="SayfaAnahtarlari" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SayfaAnahtarlari" Member="SayfaAnahtarlaris">
+    <Type Name="SayfaAnahtarlari">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ifade_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="sayfa_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="puan" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="AnahtarIfadeler_SayfaAnahtarlari" Member="AnahtarIfadeler" ThisKey="ifade_id" OtherKey="Id" Type="AnahtarIfadeler" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="WebSayfalar_SayfaAnahtarlari" Member="WebSayfalar" ThisKey="sayfa_id" OtherKey="Id" Type="WebSayfalar" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiteSitesi" Member="SiteSitesis">
+    <Type Name="SiteSitesi">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="site1" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="site2" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="WebSayfalar_SiteSitesi" Member="WebSayfalar" ThisKey="site1" OtherKey="Id" Type="WebSayfalar" IsForeignKey="true" />
+      <Association Name="WebSayfalar_SiteSitesi1" Member="WebSayfalar1" ThisKey="site2" OtherKey="Id" Type="WebSayfalar" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WebSayfalar" Member="WebSayfalars">
+    <Type Name="WebSayfalar">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="url" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="website_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="path" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="query" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="uzanti" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="baslik" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="aciklama" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="icerik" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="content_type" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="response_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scanned" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="WebSayfalar_SayfaAnahtarlari" Member="SayfaAnahtarlaris" ThisKey="Id" OtherKey="sayfa_id" Type="SayfaAnahtarlari" />
+      <Association Name="WebSayfalar_SiteSitesi" Member="SiteSitesis" ThisKey="Id" OtherKey="site1" Type="SiteSitesi" />
+      <Association Name="WebSayfalar_SiteSitesi1" Member="SiteSitesis1" ThisKey="Id" OtherKey="site2" Type="SiteSitesi" />
+      <Association Name="WebSiteler_WebSayfalar" Member="WebSiteler" ThisKey="website_id" OtherKey="Id" Type="WebSiteler" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WebSiteler" Member="WebSitelers">
+    <Type Name="WebSiteler">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="url" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="WebSiteler_WebSayfalar" Member="WebSayfalars" ThisKey="Id" OtherKey="website_id" Type="WebSayfalar" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/Resources/css/styles.css" />
+</head>
+<body>
+    <table class="pageCenter">
+        <tr>
+            <td>
+                <div class="mainDiv">
+                    <div>
+                        <img src="~/Resources/img/logo.png" height="400">
+                    </div>
+                    <div>
+                        <form action="Main/Ara">
+                            <p class="btnInput">
+                                <input type="text" name="sorgu" class="searchBox" placeholder="Buraya yaz..." autocomplete="off">
+                            </p>
+                            <p>
+                                <input type="submit" class="btn" value="Ara">
+                                <input type="submit" formaction="Main/GorselAra" class="btn" value="Görsel Ara">
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

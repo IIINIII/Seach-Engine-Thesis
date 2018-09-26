@@ -1,0 +1,59 @@
+﻿@model List<AraturkaSlave.Models.GorselSonuc>
+@{
+    Layout = null;
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/Resources/css/styles.css" />
+</head>
+<body>
+    <div class="header">
+        <form action="~/Main/GorselAra" style="width: 100%;">
+            <table style="width: 100%;max-width:1080px">
+                <tr>
+                    <td style="width: 1px;">
+                        <a href="~/Main"><img src="~/Resources/img/ronly.png" class="ronly" /></a>
+                    </td>
+                    <td>
+                        <input type="text" name="sorgu" class="searchBar" placeholder="Aramak istediğin şey..." value="@ViewData["sorgu"]">
+                    </td>
+                    <td style="width: 1px;">
+                        <input type="submit" name="ara" class="btn" value="Ara" />
+                    </td>
+                    <td style="width: 1px;">
+                        <input type="submit" formaction="~/Main/Ara" name="ara" class="btn" value="İçerik Ara" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <p class="resultNote">Toplam bulunan site sayısı: @ViewData["toplam"]</p>
+    <div class="content gorselContent">
+        @{
+            foreach (var sonuc in Model)
+            {
+                <a href="@sonuc.url">
+                    <div class="gorselResult">
+                        <img src="@sonuc.source_url" />
+                    </div>
+                </a>
+            }
+        }
+    </div>
+    <div class="pager">
+        <a href="/Main/GorselAra?sorgu=@ViewData["sorgu"]&sayfano=@((int)ViewData["sayfano"]-1)" class="btn">⮜</a>
+        @{
+            int bas = (int)ViewData["bas"];
+            int son = (int)ViewData["son"];
+            string selected = "selected";
+            for (int i = bas; i <= son; i++)
+            {
+                <a class="btn @{if ((int)ViewData["sayfano"] == i) { @selected } } " href="/Main/GorselAra?sorgu=@ViewData["sorgu"]&sayfano=@i">@i</a>
+            }
+        }
+        <a href="/Main/GorselAra?sorgu=@ViewData["sorgu"]&sayfano=@((int)ViewData["sayfano"]+1)" class="btn">⮞</a>
+    </div>
+</body>
+</html>

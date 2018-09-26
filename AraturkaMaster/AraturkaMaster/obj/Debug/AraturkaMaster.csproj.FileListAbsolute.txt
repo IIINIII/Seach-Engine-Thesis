@@ -1,0 +1,11 @@
+c:\users\ibrok\documents\visual studio 2015\Projects\AraturkaMaster\AraturkaMaster\bin\Debug\AraturkaMaster.exe.config
+c:\users\ibrok\documents\visual studio 2015\Projects\AraturkaMaster\AraturkaMaster\bin\Debug\AraturkaMaster.exe
+c:\users\ibrok\documents\visual studio 2015\Projects\AraturkaMaster\AraturkaMaster\bin\Debug\AraturkaMaster.pdb
+c:\users\ibrok\documents\visual studio 2015\Projects\AraturkaMaster\AraturkaMaster\obj\Debug\AraturkaMaster.csprojResolveAssemblyReference.cache
+c:\users\ibrok\documents\visual studio 2015\Projects\AraturkaMaster\AraturkaMaster\obj\Debug\AraturkaMaster.exe
+c:\users\ibrok\documents\visual studio 2015\Projects\AraturkaMaster\AraturkaMaster\obj\Debug\AraturkaMaster.pdb
+c:\users\ibrok\documents\visual studio 2015\Projects\AraturkaMaster\AraturkaMaster\obj\Debug\AraturkaMaster.Properties.Resources.resources
+c:\users\ibrok\documents\visual studio 2015\Projects\AraturkaMaster\AraturkaMaster\obj\Debug\AraturkaMaster.csproj.GenerateResource.Cache
+C:\Users\ibrok\documents\visual studio 2015\Projects\AraturkaMaster\AraturkaMaster\bin\Debug\HtmlAgilityPack.dll
+C:\Users\ibrok\documents\visual studio 2015\Projects\AraturkaMaster\AraturkaMaster\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\ibrok\documents\visual studio 2015\Projects\AraturkaMaster\AraturkaMaster\bin\Debug\HtmlAgilityPack.xml
